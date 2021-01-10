@@ -1,30 +1,59 @@
 # How to use Microsoft Teams app templates
 
-Microsoft Teams app templates are community driven, open source and production-ready apps. Installation instructions, detailed prerequisite requirements and source codes can be found for each app on Github ([Office Developer](https://github.com/OfficeDev/)). 
+Microsoft Teams can be extended in several different ways using no-code, low-code and custom code solutions. Microsoft Teams app templates are a great way to start discovering ideas, extensibility options and examples of application architectures and coding patters or just start using an app right away in your organization. App templates are community driven, open source and production-ready apps. Installation instructions, detailed prerequisite requirements and source code is available for each app on Github ([Office Developer](https://github.com/OfficeDev/)). You can install each app as it is or clone the repository of an app and start extending it for your own purposes. You can find a detailed list of app templates here [App Templates for Microsoft Teams](https://docs.microsoft.com/en-us/microsoftteams/platform/samples/app-templates). In time of writing this article there is already 45 templates available. 
 
-There are different technologies used in apps
-- Bots
-- Tabs
-- Personal apps, which can deployed to Teams left-rail
-- Message extensions
+There are several different technologies used in apps and an app can be built utilizing one or more of these technologies.
+- Microsoft Teams Bots ([What are conversational bots?](https://docs.microsoft.com/en-us/microsoftteams/platform/bots/what-are-bots))
+- Tabs ([What are Microsoft Teams custom tabs?](https://docs.microsoft.com/en-us/microsoftteams/platform/tabs/what-are-tabs))
+- Personal apps (apps available on Teams left-rail)
+- Message extensions ([What are messaging extensions?](https://docs.microsoft.com/en-us/microsoftteams/platform/messaging-extensions/what-are-messaging-extensions))
 - Power Apps and Power Automate workflows
-- SharePoint sites, pages and lists
-A template can contain one or more of these technologies combined.
+- SharePoint sites, lists, pages and templates
 
-These templates are also worth checking out when you are planning extend Teams with your own app. You can get good ideas for required services, storage options and ready-made parts for your solution.
+These templates are also worth checking out when you are planning extend Teams with your own app. You can get good ideas for development patterns, utilized services, storage options and ready-made parts for your own solution.
 
 ## Prerequisites
 
-- Microsoft 365 tenant is required for installing apps.
-- Depending on an app template, you may also require a Microsoft Azure subscription. You can get free trial subscription with xxx credit here: [Azure trial subscription](https://docs)
-- Some templates may require Power BI license, which is now included in Office 365 Developer subscription tenants.
+- Microsoft 365 tenant is required for installing apps. If you are a developer, you can get a free Office 365 Developer tenant by joining a Office 365 Developer program.
+- Depending on an app template, you may also require a Microsoft Azure subscription. You can get free trial subscription with xxx monthly credits here: [Azure trial subscription](https://docs)
+- Some templates may require Power BI license, which is now included in new Office 365 Developer subscription tenants. You can also use Power BI Pro trial license on your tenant.
+- Power Apps and Power Automate flows can be tested in default Power Platform enviroment created for Office 365 subscription. For production usage I suggest creating a separate production environment, if your organization doesn't have one already.
 
-For trying these out or if you are starting to build your own Teams extension, get a free [Microsoft 365 Developer subsription](https://office.com). 
 
-## Deploying Azure based app to Teams, Employee Ideas template
+## Deploying an Azure based app to Teams - Great Ideas template
 
-All Azure based app templates include an Azure Resource Manager (ARM) template, which is used to deploy required services to Azure automatically. 
+Of course, first read through the documentation, deployment guide and solution overview from Github. It gives you the basic understanding how app works, what resources are required, how data is stored and how app is installed.
+You need to have an Azure subscription, permissions to deploy resources to the subscription and have Global Admin role access to Azure Active Directory in your Microsoft 365 tenant.
 
-## Deploying Power App to Teams
+All Azure related services can be created with Azure Resource Manager template (ARM).  Each app has a Deploy to Azure button, which opens up the Azure Portal based on your credentials. 
+
+![Deploy to Azure button](https://camo.githubusercontent.com/7b9633223ccfac1fa26b9d503ef7741b3357360f23a10100a39924c9fb64ad87/68747470733a2f2f617a7572656465706c6f792e6e65742f6465706c6f79627574746f6e2e706e67)
+
+Easiest way is to use that browser session, where you have logged in with an account linked to your Azure subscription where you like to deploy the services. Based on required resources for the app, ARM template is providing different configuration options.
+
+
+![ARM template configuration](https://github.com/mpaukkon/Microsoft365Dev/blob/master/Articles/How%20to%20use%20Teams%20app%20templates/teams-app-azure-deployment.png)
+
+
+First pick-up a subscription and Resource group to deploy new resources. I suggest creating a new resource group at least when you are testing, so you can easily manage resources and access to them. Choose something unique for Base Resource Name, it's quite commonly used as part of deployed service URL endpoints. Refer the app deployment documentation for configuration options. Once complete click Create and Azure resource deployment begins. Depending on a type and number of services, it can take up to 15 minutes to complete.
+
+## 
+
+## Deploying a Power App to Teams
+
+## Installing an app to Teams
+Depending on your Teams configuration, there are two options for installing an app.
+- With sideloading, you can upload the app to you or your team. App is not available for anyone else in your tenant.
+- Uploading the app to organization app catalog, adds the app available for everyone in your organization by default. App availability for users can be controlled with Teams app setup policies.
+
+### Uploading an app to Teams App Catalog
+
+## Some Considerations
+
+### Estimating costs
+
+### Scaling Azure services for testing app templates
+Most costly Azure service for most of these app templates is Azure App Service. If you want to cut some costs on your try-out subscription or trying these out on your production subscription, you can scale down App Services.
+
 
 ## Further Learning
