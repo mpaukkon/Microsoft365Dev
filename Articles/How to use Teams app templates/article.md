@@ -15,8 +15,8 @@ These templates are also worth checking out when you are planning extend Teams w
 ## Prerequisites
 
 - Microsoft 365 tenant is required for installing apps. If you are a developer, you can get a free Office 365 Developer tenant by joining a Office 365 Developer program.
-- Depending on an app template, you may also require a Microsoft Azure subscription. You can get free trial subscription with xxx monthly credits here: [Azure trial subscription](https://docs)
-- Some templates may require Power BI license, which is now included in new Office 365 Developer subscription tenants. You can also use Power BI Pro trial license on your tenant.
+- Depending on an app template, you may also require a Microsoft Azure subscription. You can get a free trial subscription with $200 credits for first 30 days and 12 months of popular free services here: [Azure trial subscription](https://azure.microsoft.com/en-us/free/)
+- Some templates may require a Power BI license, which is now included in new Office 365 Developer subscription tenants. You can also use Power BI Pro trial license on your tenant.
 - Power Apps and Power Automate flows can be tested in default Power Platform enviroment created for Office 365 subscription. For production usage I suggest creating a separate production environment, if your organization doesn't have one already.
 
 
@@ -48,9 +48,13 @@ Depending on your Teams configuration, there are two options for installing an a
 
 ### Uploading an app to Teams App Catalog
 
-## Some Considerations
+## Considerations
 
-### Estimating costs
+### Estimating costs on Azure resources
+
+Each app template with Azure resources also contains a documentation about estimated costs. Cost estimation is based on assumption about number of users and usage of the app. Cost estimation is a basis for scaling Azure resources. Actual costs depend on how resources are scaled and how much usage there is. 
+
+You can also do your own estimation with Azure calculator by adding services.
 
 ### Scaling Azure services for testing app templates
 Most costly Azure service for most of these app templates is Azure App Service. If you want to cut some costs on your try-out subscription or trying these out on your production subscription, you can scale down App Services.
