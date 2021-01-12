@@ -33,12 +33,15 @@ Easiest way is to use that browser session, where you have logged in with an acc
 ![ARM template configuration](https://github.com/mpaukkon/Microsoft365Dev/blob/master/Articles/How%20to%20use%20Teams%20app%20templates/teams-app-azure-deployment.png)
 
 
-First pick-up a subscription and Resource group to deploy new resources. I suggest creating a new resource group for the app, at least when you are testing, so you can easily manage app's resources and access to them. Choose something unique for Base Resource Name, it's quite commonly used as part of deployed service URL endpoints. Refer the app deployment documentation for configuration options. Once complete click Create and Azure resource deployment begins. Depending on a type and number of services, it can take up to 15 minutes to complete.
+First pick-up a subscription and a resource group to deploy new resources. I suggest creating a new resource group for the app, at least when you are testing, so you can easily manage app's resources and access to them. Choose something unique for Base Resource Name, it's quite commonly used as part of deployed service URL endpoints, so it needs to be globally unique. Refer the app deployment documentation for other configuration options. Once complete click Create and Azure resource deployment begins. Depending on a type and number of services, it can take up to 15 minutes to complete. Azure portal will notify when resources are deployed.
 
 
 ## Deploying SharePoint resources
 
-Some app templates require you to create new resources, like sites and lists, to SharePoint Online. SharePoint resources can be created with PowerShell script provided in deployment guide or manually.
+Some app templates require you to create new resources, like sites and lists, to SharePoint Online. SharePoint resources can be created with PowerShell script provided in deployment guide or manually. You need [PnP PowerShell](https://docs.microsoft.com/en-us/powershell/sharepoint/sharepoint-pnp/sharepoint-pnp-cmdlets) module installed for scripts and easiest way is to install it from PowerShell Gallery by running a command
+
+`Install-Module SharePointPnPPowerShellOnline`
+
 
 ## Deploying a Power App to Teams
 
