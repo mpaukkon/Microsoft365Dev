@@ -7,7 +7,7 @@ There are several different technologies used in apps and an app can be built ut
 - Tabs ([What are Microsoft Teams custom tabs?](https://docs.microsoft.com/en-us/microsoftteams/platform/tabs/what-are-tabs))
 - Personal apps (tabs available on Teams left-rail)
 - Message extensions ([What are messaging extensions?](https://docs.microsoft.com/en-us/microsoftteams/platform/messaging-extensions/what-are-messaging-extensions))
-- Power Apps and Power Automate workflows
+- Power Apps and Power Automate workflows ([Teams integration with Microsoft Power Platform](https://docs.microsoft.com/en-us/microsoftteams/teams-power-platfom-integration))
 - SharePoint sites, lists, pages and templates
 
 ## Prerequisites
@@ -38,14 +38,19 @@ First pick-up a subscription and a resource group to deploy new resources. I sug
 
 ## Deploying SharePoint resources
 
-Some app templates require you to create new resources, like sites and lists, to SharePoint Online. SharePoint resources can be created with PowerShell script provided in deployment guide or manually. You need [PnP PowerShell](https://docs.microsoft.com/en-us/powershell/sharepoint/sharepoint-pnp/sharepoint-pnp-cmdlets) module installed for scripts and easiest way is to install it from PowerShell Gallery by running a command
+Some app templates require you to create new resources, like sites and lists, to SharePoint Online. SharePoint resources are created with a PowerShell script provided in deployment guide, with a Power Automate Flow or manually. 
+
+For scripts you need [PnP PowerShell](https://docs.microsoft.com/en-us/powershell/sharepoint/sharepoint-pnp/sharepoint-pnp-cmdlets) module installed and easiest way is to install it from PowerShell Gallery by running a command
 
 `Install-Module SharePointPnPPowerShellOnline`
 
+When SharePoint resources are deployed with Power Automate, first you import a Flow to your environment in [Power Automate portal](https://flow.microsoft.com), configure the Flow and run it manually.
 
-## Deploying a Power App to Teams
+Creating resources manually is guided in the deployment guide, remember to use exact column names or otherwise rest of the solution might not work.
 
+## Deploying and installing a Power App to Teams
 
+Deploying a Power App to Teams is done in Power Apps maker portal [https://make.powerapps.com](Power Apps portal). First app package is imported from Github
 
 ## Installing an app to Teams
 Depending on your Teams configuration, there are two options for installing an app.
